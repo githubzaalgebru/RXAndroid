@@ -3,6 +3,7 @@ package com.algebra.rxandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -24,5 +25,14 @@ class MainActivity : AppCompatActivity( ) {
             DialogExample( ).show( supportFragmentManager, "DE" )
         }
 
+        bDrugi.setOnClickListener {
+            OperatorDialog( ).show( supportFragmentManager, "OD" )
+        }
+
+    }
+
+    override fun onDestroy( ) {
+        super.onDestroy( )
+        ( observer as Disposable ).dispose( )
     }
 }

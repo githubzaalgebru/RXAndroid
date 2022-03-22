@@ -19,7 +19,7 @@ class DialogExample : DialogFragment( ) {
     private var result: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate( savedInstanceState )
 
         val anyObservable = getAnyObservable( )
         disposable = anyObservable
